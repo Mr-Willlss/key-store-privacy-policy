@@ -10,15 +10,17 @@
     :root {
       color-scheme: light;
       --bg: #f6f4ef;
-      --panel: rgba(255, 255, 255, 0.82);
+      --panel: rgba(255, 255, 255, 0.84);
+      --panel-strong: rgba(255, 255, 255, 0.94);
       --panel-border: rgba(46, 42, 38, 0.12);
       --text: #191614;
-      --muted: #61584f;
-      --accent: #0f766e;
-      --accent-soft: rgba(15, 118, 110, 0.12);
-      --shadow: 0 24px 80px rgba(37, 27, 19, 0.10);
+      --muted: #60574e;
+      --accent: #136b60;
+      --accent-soft: rgba(19, 107, 96, 0.12);
+      --accent-2: #2f8b44;
+      --shadow: 0 24px 80px rgba(37, 27, 19, 0.12);
       --radius: 28px;
-      --max: 900px;
+      --max: 1080px;
     }
 
     * { box-sizing: border-box; }
@@ -28,173 +30,448 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(15, 118, 110, 0.10), transparent 34%),
-        radial-gradient(circle at 90% 10%, rgba(191, 150, 88, 0.12), transparent 26%),
-        linear-gradient(180deg, #fbfaf7 0%, var(--bg) 52%, #f2eee7 100%);
+        radial-gradient(circle at 12% 0%, rgba(47, 139, 68, 0.12), transparent 26%),
+        radial-gradient(circle at 88% 8%, rgba(19, 107, 96, 0.10), transparent 28%),
+        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 48%, #f0ebe2 100%);
       min-height: 100vh;
       line-height: 1.65;
     }
-    .shell {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-      padding: 40px 0 64px;
-    }
-    .hero {
-      padding: 28px;
-      border: 1px solid var(--panel-border);
-      border-radius: calc(var(--radius) + 8px);
-      background: var(--panel);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 11px;
-      height: 11px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px var(--accent-soft);
-    }
-    h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 5vw, 4.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      max-width: 10ch;
-    }
-    .lead {
-      margin: 18px 0 0;
-      max-width: 66ch;
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      color: var(--muted);
-    }
-    .meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-    }
-    .meta-card {
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid rgba(46, 42, 38, 0.10);
-    }
-    .meta-label {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .meta-value {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    main {
-      margin-top: 22px;
-      display: grid;
-      gap: 16px;
-    }
-    section {
-      padding: 28px;
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--panel-border);
-      box-shadow: 0 12px 40px rgba(37, 27, 19, 0.05);
-    }
-    h2 {
-      margin: 0 0 12px;
-      font-size: 1.25rem;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-    p { margin: 0 0 14px; }
-    p:last-child { margin-bottom: 0; }
-    ul { margin: 12px 0 0; padding-left: 1.2rem; }
-    li + li { margin-top: 8px; }
-    .callout {
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(15, 118, 110, 0.08), rgba(15, 118, 110, 0.04));
-      border: 1px solid rgba(15, 118, 110, 0.16);
-    }
-    .contact {
-      font-weight: 600;
-      color: var(--text);
-      word-break: break-word;
-    }
+
     a {
       color: var(--accent);
       text-decoration-thickness: 1px;
       text-underline-offset: 0.18em;
     }
+
     a:hover { text-decoration-thickness: 2px; }
+
+    .shell {
+      width: min(calc(100% - 28px), var(--max));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .brand-mark img {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(19, 107, 96, 0.18);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #fff;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      padding: 26px;
+      border-radius: calc(var(--radius) + 8px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.78));
+      border: 1px solid var(--panel-border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent-2), var(--accent));
+      box-shadow: 0 0 0 6px rgba(47, 139, 68, 0.12);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 11ch;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 62ch;
+      font-size: clamp(1.02rem, 1.3vw, 1.14rem);
+      color: var(--muted);
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .meta-card {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(46, 42, 38, 0.10);
+    }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .meta-value {
+      font-weight: 650;
+      font-size: 1rem;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 100%;
+      padding: 16px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 25% 10%, rgba(47, 139, 68, 0.20), transparent 30%),
+        linear-gradient(180deg, rgba(243, 251, 246, 0.96), rgba(230, 243, 232, 0.92));
+      border: 1px solid rgba(19, 107, 96, 0.16);
+      overflow: hidden;
+    }
+
+    .art-card {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      height: 100%;
+      min-height: 420px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    .art-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      box-shadow: 0 10px 24px rgba(37, 27, 19, 0.08);
+      z-index: 2;
+    }
+
+    .art-badge img {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    .art-badge strong {
+      display: block;
+      font-size: 0.98rem;
+      line-height: 1.1;
+    }
+
+    .art-badge span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .feature-frame {
+      position: relative;
+      margin-top: 36px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(19, 107, 96, 0.06), rgba(47, 139, 68, 0.08));
+      border: 1px solid rgba(19, 107, 96, 0.14);
+      min-height: 320px;
+    }
+
+    .feature-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-caption {
+      display: grid;
+      gap: 10px;
+      padding: 2px 2px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .highlight-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .highlight {
+      padding: 14px 14px 15px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(46, 42, 38, 0.10);
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.94rem;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    main {
+      margin-top: 18px;
+      display: grid;
+      gap: 16px;
+    }
+
+    section {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 12px 40px rgba(37, 27, 19, 0.05);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .section-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(46, 42, 38, 0.10);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.25rem;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 1.15rem;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .callout {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(19, 107, 96, 0.08), rgba(19, 107, 96, 0.04));
+      border: 1px solid rgba(19, 107, 96, 0.16);
+    }
+
+    .contact {
+      font-weight: 700;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 0;
+      }
+
+      .art-card {
+        min-height: 0;
+      }
+
+      .feature-frame {
+        min-height: 0;
+      }
+
+      .section-grid,
+      .highlight-row,
+      .meta {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 720px) {
       .shell {
-        width: min(calc(100% - 20px), var(--max));
-        padding: 16px 0 40px;
+        width: min(calc(100% - 18px), var(--max));
+        padding: 14px 0 44px;
       }
-      .hero, section {
-        padding: 22px;
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero,
+      section {
+        padding: 20px;
         border-radius: 22px;
       }
-      .meta { grid-template-columns: 1fr; }
-      h1 { max-width: 12ch; }
+
+      h1 {
+        max-width: 12ch;
+      }
     }
   </style>
 </head>
 <body>
   <div class="shell">
+    <header class="topbar" aria-label="Brand header">
+      <div class="brand-mark">
+        <img src="./keystore_app_icon_512.png" alt="Keystore app icon">
+        <span>Keystore Privacy Policy</span>
+      </div>
+      <div class="footer-note">Last updated August 14, 2026</div>
+    </header>
+
     <header class="hero">
-      <p class="eyebrow">Keystore</p>
-      <h1>Privacy Policy</h1>
-      <p class="lead">
-        Keystore is a privacy-first Android clipboard manager and optional keyboard.
-        This policy explains what data the app handles, how it is stored, and what
-        happens when you use features such as clipboard history, writing capture, and
-        voice typing.
-      </p>
-      <div class="meta" aria-label="Policy metadata">
-        <div class="meta-card">
-          <span class="meta-label">Last updated</span>
-          <span class="meta-value">August 14, 2026</span>
+      <div class="hero-copy">
+        <p class="eyebrow">Keystore</p>
+        <h1>Privacy Policy</h1>
+        <p class="lead">
+          Keystore is a privacy-first Android clipboard manager and optional keyboard.
+          This policy explains what data the app handles, how it is stored, and what
+          happens when you use features such as clipboard history, writing capture, and
+          voice typing.
+        </p>
+
+        <div class="meta" aria-label="Policy metadata">
+          <div class="meta-card">
+            <span class="meta-label">Applies to</span>
+            <span class="meta-value">Keystore and Keystore Keyboard</span>
+          </div>
+          <div class="meta-card">
+            <span class="meta-label">Core promise</span>
+            <span class="meta-value">Local-only, encrypted, no ads</span>
+          </div>
         </div>
-        <div class="meta-card">
-          <span class="meta-label">Applies to</span>
-          <span class="meta-value">Keystore and Keystore Keyboard</span>
+
+        <div class="highlight-row" aria-label="Key privacy points">
+          <div class="highlight">
+            <strong>Private by design</strong>
+            <span>Content stays on the device unless you choose to delete it.</span>
+          </div>
+          <div class="highlight">
+            <strong>Encrypted storage</strong>
+            <span>Saved clipboard data is protected by Android Keystore.</span>
+          </div>
+          <div class="highlight">
+            <strong>Purpose-built</strong>
+            <span>Voice typing and dictionary access are optional features.</span>
+          </div>
         </div>
       </div>
+
+      <aside class="hero-art" aria-label="Keystore brand artwork">
+        <div class="art-card">
+          <div class="art-badge">
+            <img src="./keystore_app_icon_512.png" alt="">
+            <div>
+              <strong>Keystore</strong>
+              <span>Secure clipboard vault</span>
+            </div>
+          </div>
+
+          <div class="feature-frame">
+            <img src="./Keystore_Feature_Graphic_1024x500_15MB.png" alt="Keystore feature graphic showing the app interface and privacy-focused design">
+          </div>
+          <div class="feature-caption">
+            <span>Brand artwork from the Play Store listing, shown here to make the policy page feel official and connected to the app.</span>
+          </div>
+        </div>
+      </aside>
     </header>
 
     <main>
       <section>
         <h2>Data Keystore handles</h2>
+        <div class="section-grid">
+          <div class="section-card">
+            <strong>Clipboard content</strong>
+            <p>Text you intentionally copy while the app or keyboard can access the Android clipboard.</p>
+          </div>
+          <div class="section-card">
+            <strong>Saved entries</strong>
+            <p>Entries can be edited, formatted, moved to trash, or permanently deleted by you.</p>
+          </div>
+          <div class="section-card">
+            <strong>Local encryption</strong>
+            <p>Saved clipboard content is encrypted in the app's private local database using Android Keystore.</p>
+          </div>
+        </div>
         <p>
-          Keystore stores text that you intentionally copy while the Keystore app or
-          Keystore Keyboard can access the Android clipboard. You may also edit and
-          format individual saved entries.
-        </p>
-        <p>
-          Saved clipboard content is encrypted in the app's private local database using
-          a key protected by Android Keystore.
-        </p>
-        <div class="callout">
           Keystore does not upload clipboard entries, edited text, keyboard input,
           contacts, identifiers, or usage histories to the developer. It does not sell
           or share user data for advertising.
-        </div>
+        </p>
       </section>
 
       <section>
@@ -275,9 +552,9 @@
         </p>
         <p>
           Contact:
-          <span class="contact">REPLACE_WITH_YOUR_SUPPORT_EMAIL</span>
+          <a class="contact" href="mailto:samiduvimo@gmail.com">samiduvimo@gmail.com</a>
         </p>
-        <p>
+        <p class="footer-note">
           Host this policy at a stable, publicly accessible HTTPS URL before submitting
           the app to Google Play.
         </p>
