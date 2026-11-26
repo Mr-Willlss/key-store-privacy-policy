@@ -1,12 +1,447 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=./privacy-policy/">
-  <title>Keystore Privacy Policy</title>
+  <meta name="theme-color" content="#f5f7f2">
+  <meta name="description" content="Keystore is an Android keyboard and private clipboard archive for text you choose to copy.">
+  <title>Keystore — Your copied text, close at hand</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #173a35;
+      --ink-soft: #49635d;
+      --muted: #71817a;
+      --green: #237b66;
+      --green-dark: #155b4c;
+      --green-light: #dceee4;
+      --paper: #f5f7f2;
+      --white: #fffefa;
+      --line: #dce5dc;
+      --gold: #efbd64;
+      --shadow: 0 24px 70px rgba(27, 62, 52, .11);
+      --radius: 26px;
+      --width: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; border-radius: 5px; }
+    .wrap { width: min(calc(100% - 40px), var(--width)); margin-inline: auto; }
+    .topbar { padding: 18px 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; font-size: 1.12rem; font-weight: 780; letter-spacing: -.04em; }
+    .brand-symbol { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 13px; background: linear-gradient(145deg, #55aa85, #155b4c); color: #fff; font-size: 1.3rem; font-weight: 850; box-shadow: 0 7px 18px rgba(21, 91, 76, .2); }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a { color: var(--ink-soft); text-decoration: none; font-size: .91rem; font-weight: 630; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links .nav-privacy { padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); }
+
+    .hero { padding: 48px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: clamp(32px, 7vw, 92px); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--green-dark); font-size: .77rem; font-weight: 780; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 650px; margin: 17px 0 18px; font-size: clamp(3rem, 6.5vw, 5.65rem); line-height: .99; letter-spacing: -.075em; }
+    h1 span { color: var(--green); }
+    .lead { max-width: 560px; margin-bottom: 27px; color: var(--ink-soft); font-size: clamp(1.05rem, 1.55vw, 1.2rem); }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 9px; padding: 11px 19px; border: 1px solid transparent; border-radius: 999px; background: var(--green); color: white; text-decoration: none; font-weight: 730; transition: background .2s ease, transform .2s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--green-dark); }
+    .button.secondary { border-color: var(--line); background: var(--white); color: var(--ink); }
+    .button.secondary:hover { background: var(--green-light); }
+    .hero-note { margin: 18px 0 0; color: var(--muted); font-size: .88rem; }
+
+    .preview-scene { position: relative; min-height: 470px; display: grid; place-items: center; }
+    .preview-glow { position: absolute; width: min(100%, 470px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #d9eee2 0, rgba(217,238,226,.7) 43%, rgba(245,247,242,0) 72%); }
+    .preview-card { position: relative; width: min(100%, 405px); padding: 22px; border: 1px solid rgba(255,255,255,.9); border-radius: 30px; background: rgba(255,254,250,.91); box-shadow: var(--shadow); transform: rotate(1.4deg); }
+    .preview-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+    .preview-title { display: flex; align-items: center; gap: 11px; font-size: 1rem; font-weight: 770; }
+    .mini-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 11px; background: var(--green-light); color: var(--green-dark); font-size: 1.08rem; }
+    .preview-label { color: var(--muted); font-size: .74rem; }
+    .clip { margin-top: 10px; padding: 14px 15px; border: 1px solid #e8eee7; border-radius: 17px; background: #fff; }
+    .clip-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+    .clip-type { color: var(--green-dark); font-size: .7rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .clip-time { color: #8b9690; font-size: .71rem; }
+    .clip p { margin: 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.5; }
+    .clip.pinned { border-color: #e9d8b8; background: #fffaf0; }
+    .keyboard { margin: 17px -2px -2px; padding: 12px; border-radius: 20px; background: #e8eee8; }
+    .keyboard-bar { display: flex; justify-content: space-between; margin: 0 2px 9px; color: var(--ink-soft); font-size: .72rem; font-weight: 720; }
+    .key-row { display: flex; justify-content: center; gap: 5px; margin-top: 5px; }
+    .key { display: grid; min-width: 26px; height: 28px; flex: 1; place-items: center; border-radius: 7px; background: #fff; box-shadow: 0 2px 0 #d2dbd2; color: #466057; font-size: .65rem; }
+    .key.wide { flex: 1.6; background: #d4e8db; }
+    .privacy-chip { position: absolute; right: -15px; bottom: 40px; display: flex; align-items: center; gap: 10px; padding: 13px 17px; border: 1px solid #d5e5d9; border-radius: 17px; background: var(--white); box-shadow: 0 15px 40px rgba(27,62,52,.1); font-size: .81rem; font-weight: 730; transform: rotate(-3deg); }
+    .privacy-chip span { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 10px; background: var(--green-light); color: var(--green-dark); }
+
+    .trust-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 19px; background: var(--line); }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 12px; background: var(--white); color: var(--ink-soft); font-size: .86rem; font-weight: 660; text-align: center; }
+    .trust-item b { color: var(--green); font-size: 1.1rem; }
+    section { scroll-margin-top: 28px; }
+    .section { padding: 92px 0; }
+    .section-head { max-width: 680px; margin-bottom: 35px; }
+    .section-head h2 { margin: 12px 0 12px; font-size: clamp(2.15rem, 4vw, 3.35rem); line-height: 1.08; letter-spacing: -.06em; }
+    .section-head p { margin-bottom: 0; color: var(--ink-soft); font-size: 1.04rem; }
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .feature { min-height: 220px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+    .feature-icon { display: grid; width: 44px; height: 44px; margin-bottom: 20px; place-items: center; border-radius: 14px; background: var(--green-light); color: var(--green-dark); font-size: 1.28rem; }
+    .feature h3 { margin-bottom: 8px; font-size: 1.05rem; letter-spacing: -.02em; }
+    .feature p { margin: 0; color: var(--ink-soft); font-size: .91rem; }
+
+    .how { background: #eaf1e9; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .step { padding: 23px; border: 1px solid rgba(35,123,102,.14); border-radius: var(--radius); background: rgba(255,254,250,.82); }
+    .step-number { display: grid; width: 36px; height: 36px; margin-bottom: 18px; place-items: center; border-radius: 50%; background: var(--green); color: white; font-weight: 800; }
+    .step h3 { margin-bottom: 8px; font-size: 1.08rem; }
+    .step p { margin: 0; color: var(--ink-soft); font-size: .93rem; }
+
+    .privacy-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 55px; align-items: center; }
+    .privacy-panel { padding: 30px; border-radius: 30px; background: var(--ink); color: #f7fbf6; }
+    .privacy-panel .eyebrow { color: #b7dfc7; }
+    .privacy-panel h2 { margin: 14px 0; font-size: clamp(2.2rem, 4.5vw, 3.5rem); line-height: 1.03; letter-spacing: -.065em; }
+    .privacy-panel p { margin: 0; color: #cfdbd3; }
+    .privacy-list { display: grid; gap: 17px; }
+    .privacy-point { display: grid; grid-template-columns: 38px 1fr; gap: 13px; }
+    .privacy-point > span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 12px; background: var(--green-light); color: var(--green-dark); font-weight: 800; }
+    .privacy-point h3 { margin: 0 0 3px; font-size: .99rem; }
+    .privacy-point p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+    .policy-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; color: #c4f0d4; font-weight: 720; text-underline-offset: 4px; }
+    .privacy-panel .policy-link:hover { color: #fff; }
+    .privacy-caption { margin-top: 16px !important; color: #a9beb2 !important; font-size: .78rem; }
+
+    .capacity { padding-top: 0; }
+    .capacity-card { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; padding: 25px 28px; border: 1px solid #eadbbd; border-radius: 22px; background: #fff9eb; }
+    .capacity-icon { display: grid; width: 43px; height: 43px; place-items: center; border-radius: 14px; background: #f5e6c6; color: #715417; font-size: 1.2rem; }
+    .capacity-card h3 { margin: 0 0 5px; font-size: 1.04rem; }
+    .capacity-card p { margin: 0; color: #655b48; font-size: .91rem; }
+
+    .progress { background: #edf2eb; }
+    .progress-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .progress-card { padding: 23px; border: 1px solid #dce5dc; border-radius: 22px; background: var(--white); }
+    .status { display: inline-flex; margin-bottom: 13px; padding: 5px 10px; border-radius: 999px; background: var(--green-light); color: var(--green-dark); font-size: .71rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .status.review { background: #fff0cf; color: #76520f; }
+    .status.next { background: #e9ece9; color: #596961; }
+    .progress-card h3 { margin-bottom: 8px; font-size: 1.06rem; }
+    .progress-card p { margin: 0; color: var(--ink-soft); font-size: .91rem; }
+    .status-note { margin: 16px 0 0; color: var(--muted); font-size: .84rem; }
+    .log-detail { margin-top: 20px; padding: 22px 24px; border: 1px solid #dce5dc; border-radius: 22px; background: var(--white); }
+    .log-detail h3 { margin: 0 0 12px; font-size: 1.08rem; }
+    .log-detail + .log-detail { margin-top: 12px; }
+    .log-detail ul, .log-detail ol { margin: 0; padding-left: 21px; color: var(--ink-soft); }
+    .log-detail li + li { margin-top: 7px; }
+    .log-evidence { margin: 14px 0 0; color: var(--muted); font-size: .82rem; }
+
+    .closing { padding: 76px 0; }
+    .closing-card { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 35px 40px; border-radius: 30px; background: var(--green); color: white; }
+    .closing-card h2 { max-width: 600px; margin: 0; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; letter-spacing: -.06em; }
+    .closing-card .button { flex: 0 0 auto; border-color: rgba(255,255,255,.2); background: white; color: var(--green-dark); }
+    .closing-card .button:hover { background: var(--green-light); }
+    footer { padding: 25px 0 34px; border-top: 1px solid var(--line); }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .84rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .footer-links a { color: var(--ink-soft); text-underline-offset: 3px; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .privacy-grid { gap: 30px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(calc(100% - 30px), var(--width)); }
+      .topbar { padding: 12px 0; }
+      .nav { align-items: flex-start; }
+      .nav-links { justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
+      .nav-links a { font-size: .79rem; }
+      .nav-links .nav-privacy { padding: 6px 10px; }
+      .brand { gap: 8px; font-size: 1rem; }
+      .brand-symbol { width: 35px; height: 35px; border-radius: 11px; }
+      .hero { padding: 39px 0 55px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid > * { min-width: 0; }
+      h1 { max-width: 590px; font-size: clamp(3rem, 13vw, 4.5rem); }
+      .preview-scene { min-height: 400px; margin-top: 2px; }
+      .preview-card { width: 100%; max-width: 405px; transform: none; }
+      .key { min-width: 0; padding-inline: 2px; }
+      .privacy-chip { right: 12px; bottom: 16px; transform: none; }
+      .trust-row { grid-template-columns: 1fr; }
+      .trust-item { justify-content: flex-start; padding-left: 22px; }
+      .section { padding: 66px 0; }
+      .feature-grid, .steps, .progress-grid { grid-template-columns: 1fr; }
+      .feature { min-height: auto; }
+      .privacy-grid { grid-template-columns: 1fr; gap: 27px; }
+      .privacy-panel { padding: 25px; }
+      .capacity { padding-top: 0; }
+      .capacity-card { grid-template-columns: 1fr; gap: 12px; padding: 21px; }
+      .closing { padding: 55px 0; }
+      .closing-card { align-items: flex-start; flex-direction: column; padding: 27px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
-  <p>Redirecting to the <a href="./privacy-policy/">Keystore Privacy Policy</a>.</p>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Keystore home">
+        <span class="brand-symbol" aria-hidden="true">K</span>
+        <span>Keystore</span>
+      </a>
+      <div class="nav-links">
+        <a href="web/">Sign in · Web archive</a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#progress">Project status</a>
+        <a class="nav-privacy" href="privacy-policy/">Privacy policy <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid wrap">
+        <div>
+          <span class="eyebrow">A thoughtful clipboard for Android</span>
+          <h1>Your copied text, <span>close at hand.</span></h1>
+          <p class="lead">Copy on your phone, sign in with Google, and sync eligible clips to your private Keystore archive. Open the same archive on the web from any device.</p>
+          <div class="actions">
+            <a class="button" href="web/">Sign in to your archive</a>
+            <a class="button" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+            <a class="button secondary" href="#privacy">Your privacy, explained</a>
+          </div>
+          <p class="hero-note">Made for text you choose to copy — not a record of every key you type.</p>
+        </div>
+        <div class="preview-scene" aria-label="Illustration of the Keystore clipboard archive and keyboard">
+          <div class="preview-glow" aria-hidden="true"></div>
+          <div class="preview-card">
+            <div class="preview-head">
+              <div class="preview-title"><span class="mini-mark" aria-hidden="true">▤</span> Clipboard archive</div>
+              <span class="preview-label">On this device</span>
+            </div>
+            <article class="clip pinned">
+              <div class="clip-top"><span class="clip-type">Pinned note</span><span class="clip-time">Saved text</span></div>
+              <p>Keep the words you use often within easy reach.</p>
+            </article>
+            <article class="clip">
+              <div class="clip-top"><span class="clip-type">Copied text</span><span class="clip-time">Recent</span></div>
+              <p>A useful address, a message draft, or a detail you want to paste again.</p>
+            </article>
+            <div class="keyboard" aria-hidden="true">
+              <div class="keyboard-bar"><span>Keystore Keyboard</span><span>Clipboard</span></div>
+              <div class="key-row"><span class="key">Q</span><span class="key">W</span><span class="key">E</span><span class="key">R</span><span class="key">T</span><span class="key">Y</span><span class="key">U</span><span class="key">I</span><span class="key">O</span><span class="key">P</span></div>
+              <div class="key-row"><span class="key">A</span><span class="key">S</span><span class="key">D</span><span class="key">F</span><span class="key">G</span><span class="key">H</span><span class="key">J</span><span class="key">K</span><span class="key">L</span></div>
+              <div class="key-row"><span class="key wide">?123</span><span class="key">Z</span><span class="key">X</span><span class="key">C</span><span class="key">V</span><span class="key">B</span><span class="key">N</span><span class="key">M</span><span class="key wide">↵</span></div>
+            </div>
+          </div>
+          <div class="privacy-chip"><span aria-hidden="true">✓</span> Saved on your device</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="trust-row" aria-label="Keystore principles">
+        <div class="trust-item"><b aria-hidden="true">⌂</b> Local by default; cloud is opt-in</div>
+        <div class="trust-item"><b aria-hidden="true">⌑</b> Saved clipboard text is encrypted</div>
+        <div class="trust-item"><b aria-hidden="true">↗</b> Android controls clipboard access</div>
+      </div>
+    </div>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Useful by design</span>
+          <h2>More than the last thing you copied.</h2>
+          <p>Keystore gives copied text a home, with tools to find it again and a keyboard that can bring saved clips right to the text field.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">▤</span>
+            <h3>A searchable archive</h3>
+            <p>Browse saved text, search it, edit it, mark favorites, or remove entries you no longer need.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">⌨</span>
+            <h3>Your keyboard, too</h3>
+            <p>Open the clipboard panel from Keystore Keyboard and insert a saved entry into the active app.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">⤴</span>
+            <h3>Copies, not keystrokes</h3>
+            <p>The archive is for text you copy. Keystore does not build a history of every character you type.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">⌑</span>
+            <h3>Local-first storage</h3>
+            <p>Saved clipboard content is encrypted in the app database. Optional, account-scoped cloud sync keeps eligible clips available in the web archive.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how" id="how-it-works">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">A simple flow</span>
+          <h2>Copy. Keep. Reuse.</h2>
+          <p>Clipboard capture is designed around Android’s rules and your choice to use Keystore.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">1</span>
+            <h3>Set up Keystore Keyboard</h3>
+            <p>Enable it in Android settings and select it when you want to use Keystore’s keyboard and clipboard panel.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">2</span>
+            <h3>Copy text as usual</h3>
+            <p>Keystore can save copied text while the app or keyboard can access Android’s clipboard. Capture is subject to Android restrictions.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">3</span>
+            <h3>Find it when you need it</h3>
+            <p>Search or manage entries in the archive, or choose a saved clip from the keyboard to paste it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="privacy-grid wrap">
+        <div class="privacy-panel">
+          <span class="eyebrow">Privacy is part of the design</span>
+          <h2>Your clipboard belongs to you.</h2>
+          <p>Keystore is built to keep saved clipboard content local and under your control.</p>
+          <a class="policy-link" href="privacy-policy/">Read the full privacy policy <span aria-hidden="true">↗</span></a>
+          <p class="privacy-caption">Android may restrict clipboard access even when Keystore is ready to capture. The app does not secretly poll the clipboard in the background.</p>
+        </div>
+        <div class="privacy-list">
+          <article class="privacy-point">
+            <span aria-hidden="true">1</span>
+            <div><h3>Encrypted clipboard content</h3><p>The saved content field is encrypted with AES-GCM using a key held by Android Keystore. Archive previews and metadata are also stored locally.</p></div>
+          </article>
+          <article class="privacy-point">
+            <span aria-hidden="true">2</span>
+            <div><h3>Optional cloud sync</h3><p>Cloud sync is off by default. When enabled, eligible clipboard entries are sent over HTTPS to your account and protected by row-level access rules and database encryption at rest. This is not end-to-end encryption.</p></div>
+          </article>
+          <article class="privacy-point">
+            <span aria-hidden="true">3</span>
+            <div><h3>Sensitive fields are treated carefully</h3><p>The keyboard suppresses clipboard and learning features in recognized sensitive input fields, and Android-marked sensitive clips are excluded.</p></div>
+          </article>
+          <article class="privacy-point">
+            <span aria-hidden="true">4</span>
+            <div><h3>Network use</h3><p>Internet access supports an optional English dictionary download and, only when opted in, account-based clipboard sync. Dictionary requests do not include clipboard contents.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capacity" aria-labelledby="capacity-title">
+      <div class="capacity-card wrap">
+        <span class="capacity-icon" aria-hidden="true">i</span>
+        <div>
+          <h3 id="capacity-title">How many clipboard entries can Keystore keep?</h3>
+          <p>The app does not set a fixed maximum number of saved entries. In practice, available space on the device is the limit. Copying identical text updates its existing entry instead of making a duplicate. Android may also prevent some copies from being captured.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section progress" id="progress">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Project log · 26 November 2026</span>
+          <h2>Building Keystore across devices.</h2>
+          <p>Keystore is adding an optional account-based cloud archive while keeping the on-device archive. This snapshot separates coded work from what still needs configuration or device verification.</p>
+        </div>
+        <div class="progress-grid">
+          <article class="progress-card">
+            <span class="status">Implemented</span>
+            <h3>Android app and keyboard</h3>
+            <p>Keystore has a companion app, custom keyboard, encrypted local clipboard archive, search, favorites, rich-text editing, trash, and clipboard insertion from the keyboard.</p>
+          </article>
+          <article class="progress-card">
+            <span class="status review">Cloud foundation</span>
+            <h3>Supabase archive and account rules</h3>
+            <p>The Supabase project and owner-scoped clipboard table are live. Android sign-in and sync code plus the web archive are in this project; Google OAuth credentials and web hosting still need setup.</p>
+          </article>
+          <article class="progress-card">
+            <span class="status next">Next</span>
+            <h3>Connect and verify</h3>
+            <p>Finish Android and web sync, complete Google OAuth setup, verify editor exports, tune the keyboard, update privacy disclosures, and test on real devices.</p>
+          </article>
+        </div>
+        <p class="status-note">Updated 26 November 2026. The source build and physical-device behavior remain unverified for the cloud work.</p>
+        <div class="log-detail">
+          <h3>Done / implemented</h3>
+          <ul>
+            <li>Built the Android companion app and custom Keystore Keyboard.</li>
+            <li>Added a local Room database and clipboard archive with search, editing, favorites, trash, and keyboard insertion.</li>
+            <li>Added duplicate detection: copying identical text updates the existing clipboard entry and copy count.</li>
+            <li>Encrypted saved clipboard content with AES-GCM using a key held by Android Keystore. Archive previews and metadata are also stored in the local database.</li>
+            <li>Added local keyboard suggestions, settings, themes, and resizing.</li>
+            <li>Added a passphrase-based backup encryption codec; complete in-app backup export and restore are still listed as unfinished.</li>
+            <li>Created this responsive product website and linked the supplied privacy policy.</li>
+            <li>Created the Supabase Keystore Cloud project and owner-scoped clipboard table with row-level security. Authenticated clients have only select, insert, update, and delete privileges.</li>
+            <li>Added Room sync identifiers and pending-change state, a Google identity token exchange path, encrypted local session storage, network-constrained sync jobs, and an opt-in sync panel.</li>
+            <li>Added a responsive web archive with a Google sign-in entry point, search, editing, favorites, trash/restore, copy, TXT, and print/PDF actions.</li>
+            <li>Added Android TXT, PDF, and DOCX export; DOCX can be opened in Google Docs.</li>
+          </ul>
+          <p class="log-evidence"><strong>Checked:</strong> app/build.gradle.kts, AndroidManifest.xml, MainActivity.kt, ClipboardRepository.kt, AppDatabase.kt, ContentCipher.kt, BackupCodec.kt, README.md, KEYSTORE_CHANGES.md, KEYSTORE_AUDIT.md, PLAY_STORE_RELEASE_CHECKLIST.md, and PRIVACY_POLICY.md.</p>
+        </div>
+        <div class="log-detail">
+          <h3>Being verified / release preparation</h3>
+          <ul>
+            <li>Physical-device tests for clipboard capture, insertion, persistence, duplicate handling, and sensitive-field behavior are still required by the project notes; no device results were found in this inspection.</li>
+            <li>Android build and tests for the cloud changes have not run yet. Google OAuth still needs provider setup and a Web OAuth client ID; the app reads it from ignored local.properties.</li>
+            <li>Release checklist work remains, including Play declarations, screenshots, reviewer notes, and device testing.</li>
+            <li>Project documents need reconciliation: README describes writing/typing capture and destructive migration as limitations, while current app UI labels the typing archive disabled and the Room builder has no destructive-migration fallback. README also says Android 10+ although current minSdk is 23.</li>
+            <li>Cloud data is not end-to-end encrypted: cross-device access uploads content over TLS, with managed encryption at rest and per-user row-level security. The app and web page disclose this.</li>
+            <li>The product site is published on GitHub Pages at <a href="https://mr-willlss.github.io/Keystore-online/">mr-willlss.github.io/Keystore-online</a>; keep checking the deployed page and links when making updates.</li>
+          </ul>
+        </div>
+        <div class="log-detail">
+          <h3>Next work</h3>
+          <ol>
+            <li>Configure Google Cloud Web and Android OAuth clients, register their IDs in Supabase, and add the Web client ID to local.properties.</li>
+            <li>Build the Android app and resolve compiler/dependency issues; verify the Room migration and sign-in/sync on device.</li>
+            <li>Deploy the web archive and add its origin to Supabase Auth redirect settings.</li>
+            <li>Test account isolation, offline retry, concurrent edits, delete propagation, and restore across Android and web.</li>
+            <li>Complete physical-device keyboard evaluation, privacy/contact details, accessibility, and release checks.</li>
+            <li>Keep the project log and privacy disclosures aligned with the app as it changes, and recheck the published site after updates.</li>
+          </ol>
+          <p class="log-evidence">App version listed in app/build.gradle.kts: 0.3.8. Cloud source changes are not yet build-verified or deployed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-card wrap">
+        <h2>A calmer place for the text you want to keep.</h2>
+        <a class="button" href="privacy-policy/">Explore the privacy policy <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row wrap">
+      <a class="brand" href="#top"><span class="brand-symbol" aria-hidden="true">K</span><span>Keystore</span></a>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#progress">Project log</a>
+        <a href="docs/KEYSTORE_CHANGES.md">Full project history</a>
+        <a href="privacy-policy/">Privacy policy</a>
+      </div>
+      <span>Android clipboard archive &amp; keyboard</span>
+    </div>
+  </footer>
 </body>
 </html>
+
