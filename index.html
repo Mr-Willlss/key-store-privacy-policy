@@ -370,12 +370,12 @@
           <article class="progress-card">
             <span class="status review">Cloud foundation</span>
             <h3>Supabase archive and account rules</h3>
-            <p>The Supabase project and owner-scoped clipboard table are live. Android sign-in and sync code plus the web archive are in this project; Google OAuth credentials and web hosting still need setup.</p>
+            <p>The Supabase project and owner-scoped clipboard table are live. The web archive is published at <a href="web/">Keystore Web Archive</a>. Google OAuth credentials and Android sync still need setup and verification.</p>
           </article>
           <article class="progress-card">
             <span class="status next">Next</span>
             <h3>Connect and verify</h3>
-            <p>Finish Android and web sync, complete Google OAuth setup, verify editor exports, tune the keyboard, update privacy disclosures, and test on real devices.</p>
+            <p>Complete Google OAuth and Android sync, verify editor exports, tune the keyboard, and test login and cross-device behavior on real devices.</p>
           </article>
         </div>
         <p class="status-note">Updated 26 November 2026. The source build and physical-device behavior remain unverified for the cloud work.</p>
@@ -392,6 +392,7 @@
             <li>Created the Supabase Keystore Cloud project and owner-scoped clipboard table with row-level security. Authenticated clients have only select, insert, update, and delete privileges.</li>
             <li>Added Room sync identifiers and pending-change state, a Google identity token exchange path, encrypted local session storage, network-constrained sync jobs, and an opt-in sync panel.</li>
             <li>Added a responsive web archive with a Google sign-in entry point, search, editing, favorites, trash/restore, copy, TXT, and print/PDF actions.</li>
+            <li>Published the Keystore home page, web archive entry point, and cloud-sync privacy policy at <a href="web/">the public GitHub Pages site</a>.</li>
             <li>Added Android TXT, PDF, and DOCX export; DOCX can be opened in Google Docs.</li>
           </ul>
           <p class="log-evidence"><strong>Checked:</strong> app/build.gradle.kts, AndroidManifest.xml, MainActivity.kt, ClipboardRepository.kt, AppDatabase.kt, ContentCipher.kt, BackupCodec.kt, README.md, KEYSTORE_CHANGES.md, KEYSTORE_AUDIT.md, PLAY_STORE_RELEASE_CHECKLIST.md, and PRIVACY_POLICY.md.</p>
@@ -412,12 +413,12 @@
           <ol>
             <li>Configure Google Cloud Web and Android OAuth clients, register their IDs in Supabase, and add the Web client ID to local.properties.</li>
             <li>Build the Android app and resolve compiler/dependency issues; verify the Room migration and sign-in/sync on device.</li>
-            <li>Deploy the web archive and add its origin to Supabase Auth redirect settings.</li>
+            <li>Configure the deployed web archive origin and exact redirect in Supabase Auth and Google OAuth.</li>
             <li>Test account isolation, offline retry, concurrent edits, delete propagation, and restore across Android and web.</li>
             <li>Complete physical-device keyboard evaluation, privacy/contact details, accessibility, and release checks.</li>
             <li>Keep the project log and privacy disclosures aligned with the app as it changes, and recheck the published site after updates.</li>
           </ol>
-          <p class="log-evidence">App version listed in app/build.gradle.kts: 0.3.8. Cloud source changes are not yet build-verified or deployed.</p>
+          <p class="log-evidence">App version listed in app/build.gradle.kts: 0.3.8. The web archive is published; Android build and physical-device behavior remain unverified.</p>
         </div>
       </div>
     </section>
@@ -436,7 +437,7 @@
       <div class="footer-links">
         <a href="#features">Features</a>
         <a href="#progress">Project log</a>
-        <a href="docs/KEYSTORE_CHANGES.md">Full project history</a>
+        <a href="docs/IMPLEMENTATION_LOG.md">Full project history</a>
         <a href="privacy-policy/">Privacy policy</a>
       </div>
       <span>Android clipboard archive &amp; keyboard</span>
