@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f7f2">
+  <meta name="description" content="Access your Keystore clipboard archive on the web.">
+  <title>Keystore Web Archive</title>
+  <style>
+    :root{color-scheme:light;--ink:#173a35;--soft:#49635d;--muted:#71817a;--green:#237b66;--dark:#155b4c;--mint:#dceee4;--paper:#f5f7f2;--white:#fffefa;--line:#dce5dc;--gold:#efbd64;--shadow:0 22px 60px rgba(27,62,52,.1)}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button{cursor:pointer}.shell{width:min(1160px,calc(100% - 36px));margin:auto}.top{padding:20px 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.1rem;letter-spacing:-.04em}.mark{display:grid;width:42px;height:42px;place-items:center;border-radius:14px;background:linear-gradient(145deg,#55aa85,#155b4c);color:white;font-size:1.25rem}.nav-actions{display:flex;align-items:center;gap:10px}.button{display:inline-flex;min-height:44px;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border:1px solid transparent;border-radius:999px;background:var(--green);color:white;font-weight:720}.button:hover{background:var(--dark)}.button.secondary{border-color:var(--line);background:var(--white);color:var(--ink)}.button.secondary:hover{background:var(--mint)}.button.danger{border-color:#f0d8d3;background:#fff5f2;color:#9c3c2c}.button:disabled{opacity:.5;cursor:not-allowed}.hero{padding:34px 0 24px}.eyebrow{color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.hero h1{max-width:720px;margin:10px 0 12px;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.075em}.hero p{max-width:700px;margin:0;color:var(--soft);font-size:1.04rem}.privacy-note{margin:22px 0;padding:16px 18px;border:1px solid #eadbbd;border-radius:18px;background:#fff9eb;color:#655b48;font-size:.9rem}.auth-card{max-width:580px;margin:60px auto;padding:32px;border:1px solid var(--line);border-radius:28px;background:var(--white);box-shadow:var(--shadow);text-align:center}.auth-card h2{margin:0 0 8px;font-size:1.7rem;letter-spacing:-.04em}.auth-card p{margin:0 auto 22px;color:var(--soft);max-width:440px}.auth-card .button{min-width:240px}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:20px 0}.search{flex:1 1 240px;min-height:46px;padding:10px 15px;border:1px solid var(--line);border-radius:14px;background:var(--white);color:var(--ink);outline:none}.search:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(35,123,102,.12)}.layout{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);align-items:start;gap:18px;padding-bottom:54px}.panel{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--white);box-shadow:0 8px 28px rgba(27,62,52,.04)}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 18px;border-bottom:1px solid var(--line)}.panel-head h2{margin:0;font-size:1.02rem}.count{color:var(--muted);font-size:.82rem}.entries{max-height:68vh;overflow:auto}.entry{padding:16px 18px;border-bottom:1px solid #edf1eb;cursor:pointer}.entry:last-child{border-bottom:0}.entry:hover,.entry.selected{background:#f1f7f1}.entry-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}.entry-title{min-width:0;overflow:hidden;font-weight:740;text-overflow:ellipsis;white-space:nowrap}.entry-meta{color:var(--muted);font-size:.75rem}.entry-preview{display:-webkit-box;overflow:hidden;margin:0;color:var(--soft);font-size:.88rem;-webkit-box-orient:vertical;-webkit-line-clamp:3;white-space:pre-wrap}.star{border:0;background:transparent;color:#9c7a2f;font-size:1.1rem}.editor{padding:20px}.editor-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}.editor-head h2{margin:0 0 3px;font-size:1.15rem}.editor-head p{margin:0;color:var(--muted);font-size:.8rem}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:.82rem;font-weight:720}.field input,.field textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);outline:none}.field textarea{min-height:280px;resize:vertical;line-height:1.65}.editor-actions{display:flex;flex-wrap:wrap;gap:8px}.notice{min-height:22px;margin:12px 0;color:var(--soft);font-size:.85rem}.empty{padding:34px 20px;color:var(--muted);text-align:center}.muted{color:var(--muted)}.footer{padding:20px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}.hidden{display:none!important}.print-only{display:none}@media(max-width:760px){.layout{grid-template-columns:1fr}.entries{max-height:43vh}.editor{min-height:380px}.hero{padding-top:20px}.nav{align-items:flex-start}.nav-actions{justify-content:flex-end;flex-wrap:wrap}.auth-card{margin:36px auto;padding:25px}.shell{width:min(100% - 24px,1160px)}}@media print{body{background:white}.top,.hero,.privacy-note,.toolbar,.layout>.panel:first-child,.editor-actions,.footer{display:none!important}.shell{width:100%;margin:0}.layout{display:block;padding:0}.panel{border:0;box-shadow:none}.editor{padding:0}.field input,.field textarea{border:0;padding:0;resize:none;min-height:0}.field textarea{height:auto;white-space:pre-wrap}.print-only{display:block}}
+  </style>
+</head>
+<body>
+  <header class="top"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="../"><span class="mark">K</span><span>Keystore</span></a><div class="nav-actions"><span id="identity" class="muted"></span><button id="signOut" class="button secondary hidden">Sign out</button><a class="button secondary" href="../">About Keystore</a></div></nav></header>
+  <main class="shell">
+    <section class="hero"><span class="eyebrow">Your archive, across devices</span><h1>Saved text, wherever you are.</h1><p>Sign in with the same Google account you use in Keystore to view and edit clipboard entries that have synced to your account.</p></section>
+    <aside class="privacy-note"><strong>Cloud storage:</strong> Sync is opt-in in the Android app. Cloud entries are protected by your account’s row-level access rules and Supabase encryption at rest, but are not end-to-end encrypted. Avoid storing passwords, payment details, recovery codes, or other secrets.</aside>
+    <section id="signedOut" class="auth-card"><h2>Your archive follows your account</h2><p>Sign in with the same Google account used in Keystore to open clipboard entries you chose to sync.</p><button id="signIn" class="button">Sign in with Google</button><p class="muted">Google sign-in becomes active after Keystore Cloud’s Google OAuth client is configured.</p><div id="authNotice" class="notice" role="status"></div></section>
+    <section id="signedIn" class="hidden">
+      <div class="toolbar"><input id="search" class="search" type="search" placeholder="Search your saved text" aria-label="Search clipboard entries"><button id="newEntry" class="button">New text</button><button id="showTrash" class="button secondary">Recently deleted</button><button id="refresh" class="button secondary">Refresh</button></div>
+      <div class="layout">
+        <section class="panel" aria-label="Clipboard archive"><div class="panel-head"><h2 id="listTitle">Clipboard archive</h2><span id="count" class="count"></span></div><div id="entries" class="entries"></div></section>
+        <section class="panel"><div class="editor"><div class="editor-head"><div><h2 id="editorHeading">Choose a saved clip</h2><p id="editorMeta">Your web edits sync to the same account.</p></div><button id="favorite" class="star hidden" aria-label="Toggle favorite">☆</button></div><div class="field"><label for="title">Title</label><input id="title" placeholder="Optional title" disabled></div><div class="field"><label for="content">Text</label><textarea id="content" placeholder="Select a clip or start a new one" disabled></textarea></div><div class="editor-actions"><button id="save" class="button" disabled>Save changes</button><button id="copy" class="button secondary" disabled>Copy</button><button id="download" class="button secondary" disabled>Export TXT</button><button id="print" class="button secondary" disabled>Print / PDF</button><button id="trash" class="button danger hidden">Move to trash</button><button id="restore" class="button secondary hidden">Restore</button></div><div id="notice" class="notice" role="status"></div></div></section>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell">Keystore Web Archive · Your cloud archive is private to your signed-in account. <span class="print-only">Exported from Keystore.</span></div></footer>
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+    const SUPABASE_URL = 'https://ggrohhhnmcakcrmojrjs.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_T_DMkyJZKyq2WrN4SNstCw_E77iOdpf';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+    const $ = (id) => document.getElementById(id);
+    let user = null, rows = [], selected = null, trashMode = false, searchTimer;
+
+    function say(message, target = 'notice') { $(target).textContent = message; }
+    function safe(value) { return String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[char]); }
+    function shortDate(value) { const date = new Date(value); return Number.isNaN(date.valueOf()) ? '' : new Intl.DateTimeFormat(undefined, { dateStyle:'medium', timeStyle:'short' }).format(date); }
+    function setSignedIn(value) { $('signedOut').classList.toggle('hidden', value); $('signedIn').classList.toggle('hidden', !value); $('signOut').classList.toggle('hidden', !value); $('identity').textContent = value ? user?.email ?? '' : ''; }
+
+    async function signIn() {
+      say('Opening Google sign-in…', 'authNotice');
+      const { error } = await supabase.auth.signInWithOAuth({ provider:'google', options:{ redirectTo:location.href, queryParams:{ access_type:'offline', prompt:'consent' } } });
+      if (error) say(error.message, 'authNotice');
+    }
+
+    async function loadEntries() {
+      if (!user) return;
+      say('Loading archive…');
+      let query = supabase.from('clipboard_entries').select('*').eq('is_deleted', trashMode).order('last_copied_at', { ascending:false }).limit(500);
+      const term = $('search').value.trim();
+      if (term) query = query.or(`title.ilike.%${term.replace(/[%,()]/g, '')}%,content.ilike.%${term.replace(/[%,()]/g, '')}%,tags.ilike.%${term.replace(/[%,()]/g, '')}%`);
+      const { data, error } = await query;
+      if (error) { say(error.message); return; }
+      rows = data ?? [];
+      $('listTitle').textContent = trashMode ? 'Recently deleted' : 'Clipboard archive';
+      $('count').textContent = `${rows.length}${rows.length === 500 ? '+' : ''} ${rows.length === 1 ? 'entry' : 'entries'}`;
+      $('entries').innerHTML = rows.length ? rows.map(row => `<article class="entry ${selected?.id === row.id ? 'selected' : ''}" data-id="${safe(row.id)}"><div class="entry-top"><span class="entry-title">${safe(row.title || row.content_type || 'Saved text')}</span><button class="star" data-favorite="${safe(row.id)}" aria-label="${row.is_favorite ? 'Remove favorite' : 'Add favorite'}">${row.is_favorite ? '★' : '☆'}</button></div><div class="entry-meta">${safe(shortDate(row.last_copied_at))} · ${Number(row.character_count) || row.content.length} characters</div><p class="entry-preview">${safe(row.preview || row.content)}</p></article>`).join('') : '<div class="empty">No entries here yet. Turn on sync in the Keystore Android app to bring your archive here.</div>';
+      document.querySelectorAll('.entry').forEach(el => el.addEventListener('click', event => {
+        if (event.target.closest('[data-favorite]')) return;
+        selectEntry(rows.find(row => row.id === el.dataset.id));
+      }));
+      document.querySelectorAll('[data-favorite]').forEach(button => button.addEventListener('click', async event => {
+        event.stopPropagation();
+        const row = rows.find(item => item.id === button.dataset.favorite);
+        if (!row) return;
+        const { error } = await supabase.from('clipboard_entries').update({ is_favorite:!row.is_favorite, updated_at:new Date().toISOString() }).eq('id', row.id);
+        if (error) say(error.message); else await loadEntries();
+      }));
+      say(rows.length ? '' : '');
+    }
+
+    function selectEntry(row) {
+      selected = row;
+      $('editorHeading').textContent = row ? (row.title || 'Edit saved text') : 'New saved text';
+      $('editorMeta').textContent = row ? `Last copied ${shortDate(row.last_copied_at)} · ${row.content_type}` : 'New entry will sync to your account.';
+      $('title').disabled = false;
+      $('content').disabled = false;
+      $('title').value = row?.title ?? '';
+      $('content').value = row?.content ?? '';
+      ['save','copy','download','print'].forEach(id => $(id).disabled = false);
+      $('favorite').classList.toggle('hidden', !row || trashMode);
+      $('favorite').textContent = row?.is_favorite ? '★' : '☆';
+      $('trash').classList.toggle('hidden', !row || trashMode);
+      $('restore').classList.toggle('hidden', !row || !trashMode);
+      say('');
+      loadEntries();
+    }
+
+    async function saveEntry() {
+      const content = $('content').value;
+      if (!content.trim()) { say('Text cannot be empty.'); return; }
+      say('Saving…');
+      const now = new Date().toISOString();
+      const spans = selected?.content === content ? (selected.rich_text_spans?.value ?? '') : '';
+      const patch = { title:$('title').value.trim(), content, preview:content.replace(/\s+/g,' ').trim().slice(0,140), content_type:/https?:\/\//i.test(content) ? 'link' : 'text', updated_at:now, last_copied_at:selected?.last_copied_at ?? now, word_count:content.trim().split(/\s+/).length, character_count:content.length, rich_text_spans:{ value:spans } };
+      let result;
+      if (selected) result = await supabase.from('clipboard_entries').update(patch).eq('id', selected.id).select().single();
+      else result = await supabase.from('clipboard_entries').insert({ ...patch, user_id:user.id, client_id:crypto.randomUUID(), created_at:now, is_deleted:false, is_sensitive:false, is_favorite:false, is_pinned:false, is_locked:false, copy_count:1, tags:'' }).select().single();
+      if (result.error) { say(result.error.message); return; }
+      selected = result.data;
+      $('editorHeading').textContent = selected.title || 'Edit saved text';
+      say('Saved to your Keystore cloud archive.');
+      await loadEntries();
+    }
+
+    async function copyEntry() {
+      try {
+        const text = $('content').value;
+        const encoded = selected?.rich_text_spans?.value ?? '';
+        if (navigator.clipboard.write && window.ClipboardItem && encoded) {
+          const html = richHtml(text, encoded);
+          await navigator.clipboard.write([new ClipboardItem({ 'text/plain':new Blob([text],{type:'text/plain'}), 'text/html':new Blob([html],{type:'text/html'}) })]);
+        } else await navigator.clipboard.writeText(text);
+        say('Copied to this device’s clipboard.');
+      }
+      catch { say('Clipboard access is unavailable. Select and copy the text manually.'); }
+    }
+
+    function richHtml(text, encoded) {
+      const ranges = encoded.split('|').map(chunk => { const [start,end,flags=''] = chunk.split(':',3); return {start:+start,end:+end,flags:flags.split(',')}; }).filter(r => Number.isInteger(r.start) && Number.isInteger(r.end) && r.start >= 0 && r.end <= text.length && r.end > r.start);
+      const runs = [];
+      for (let i=0;i<text.length;i++) {
+        const flags = [...new Set(ranges.filter(r => i >= r.start && i < r.end).flatMap(r => r.flags))].sort().join(',');
+        const last = runs[runs.length-1];
+        if (last?.flags === flags) last.text += text[i]; else runs.push({flags,text:text[i]});
+      }
+      const escape = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]).replace(/\n/g,'<br>');
+      return runs.map(run => {
+        let content = escape(run.text), f = run.flags.split(',');
+        if (f.some(x => x.startsWith('f'))) content = `<span style="font-family:${f.find(x=>x.startsWith('f')).slice(1)==='Serif'?'serif':f.find(x=>x.startsWith('f')).slice(1)==='Monospace'?'monospace':'sans-serif'}">${content}</span>`;
+        const size = f.find(x => x.startsWith('s'))?.slice(1); if (size) content = `<span style="font-size:${Number(size)}pt">${content}</span>`;
+        if (f.includes('u')) content = `<u>${content}</u>`;
+        if (f.includes('i')) content = `<em>${content}</em>`;
+        if (f.includes('b')) content = `<strong>${content}</strong>`;
+        return content;
+      }).join('');
+    }
+
+    function downloadText() {
+      const blob = new Blob([$('content').value], { type:'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob), link = document.createElement('a');
+      link.href = url; link.download = `${$('title').value.trim() || 'keystore-text'}.txt`; link.click(); URL.revokeObjectURL(url);
+    }
+
+    async function setDeleted(isDeleted) {
+      if (!selected) return;
+      const now = new Date().toISOString();
+      const { error } = await supabase.from('clipboard_entries').update({ is_deleted:isDeleted, deleted_at:isDeleted ? now : null, updated_at:now }).eq('id', selected.id);
+      if (error) { say(error.message); return; }
+      selected = null; selectEntry(null); await loadEntries();
+      say(isDeleted ? 'Moved to Recently deleted.' : 'Restored to the archive.');
+    }
+
+    $('signIn').addEventListener('click', () => signIn().catch(error => say(error.message, 'authNotice')));
+    $('signOut').addEventListener('click', async () => { await supabase.auth.signOut(); selected = null; user = null; setSignedIn(false); });
+    $('refresh').addEventListener('click', () => loadEntries());
+    $('newEntry').addEventListener('click', () => selectEntry(null));
+    $('showTrash').addEventListener('click', async () => { trashMode = !trashMode; $('showTrash').textContent = trashMode ? 'Back to archive' : 'Recently deleted'; selected = null; selectEntry(null); await loadEntries(); });
+    $('save').addEventListener('click', () => saveEntry().catch(error => say(error.message)));
+    $('copy').addEventListener('click', () => copyEntry());
+    $('download').addEventListener('click', downloadText);
+    $('print').addEventListener('click', () => window.print());
+    $('trash').addEventListener('click', () => setDeleted(true));
+    $('restore').addEventListener('click', () => setDeleted(false));
+    $('favorite').addEventListener('click', async () => {
+      if (!selected) return;
+      const { error } = await supabase.from('clipboard_entries').update({ is_favorite:!selected.is_favorite, updated_at:new Date().toISOString() }).eq('id', selected.id);
+      if (error) say(error.message); else { selected.is_favorite = !selected.is_favorite; $('favorite').textContent = selected.is_favorite ? '★' : '☆'; await loadEntries(); }
+    });
+    $('search').addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(loadEntries, 220); });
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      user = session?.user ?? null;
+      setSignedIn(Boolean(user));
+      if (user) loadEntries(); else { rows = []; $('entries').innerHTML = ''; }
+    });
+    const { data:{ session } } = await supabase.auth.getSession();
+    user = session?.user ?? null;
+    setSignedIn(Boolean(user));
+    if (user) await loadEntries();
+  </script>
+</body>
+</html>
+
