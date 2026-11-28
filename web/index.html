@@ -51,13 +51,15 @@
       if (Number.parseInt(css.fontWeight, 10) >= 600 || ['B','STRONG'].includes(element.tagName)) flags.push('b');
       if (css.fontStyle === 'italic' || ['I','EM'].includes(element.tagName)) flags.push('i');
       if (css.textDecorationLine.includes('underline') || element.tagName === 'U') flags.push('u');
-      if (css.fontSize && css.fontSize.endsWith('px')) { const pt=Math.round(Number.parseFloat(css.fontSize)*.75); if(pt!==12) flags.push(`s${pt}`); }
-      const family = css.fontFamily.toLowerCase();
+      const explicitStyle=element.closest('[style]')?.style;
+      if (explicitStyle?.fontSize && css.fontSize.endsWith('px')) { const pt=Math.round(Number.parseFloat(css.fontSize)*.75); if(pt!==12) flags.push(`s${pt}`); }
+      const family = explicitStyle?.fontFamily ? css.fontFamily.toLowerCase() : '';
       if (family.includes('serif') && !family.includes('sans')) flags.push('fSerif');
       else if (family.includes('mono')) flags.push('fMonospace');
       else if (family.includes('cursive')) flags.push('fCasual');
       else if (family.includes('rounded')) flags.push('fRounded');
-      const rgb=css.color.match(/\d+/g)?.slice(0,3).map(Number);
+      const explicitColor=element.closest('[style],[color]');
+      const rgb=(explicitStyle?.color || explicitColor?.getAttribute('color')) ? css.color.match(/\d+/g)?.slice(0,3).map(Number) : null;
       if (rgb?.length===3) { const hex=rgb.map(value=>value.toString(16).padStart(2,'0')).join('').toUpperCase(); if(hex!=='173A35') flags.push(`cFF${hex}`); }
       if (paragraph) {
         const align=element.style.textAlign;
