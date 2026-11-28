@@ -10,25 +10,29 @@
     :root{color-scheme:light;--ink:#173a35;--soft:#49635d;--muted:#71817a;--green:#237b66;--dark:#155b4c;--mint:#dceee4;--paper:#f5f7f2;--white:#fffefa;--line:#dce5dc;--gold:#efbd64;--shadow:0 22px 60px rgba(27,62,52,.1)}
     *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button{cursor:pointer}.shell{width:min(1160px,calc(100% - 36px));margin:auto}.top{padding:20px 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.1rem;letter-spacing:-.04em}.mark{display:grid;width:42px;height:42px;place-items:center;border-radius:14px;background:linear-gradient(145deg,#55aa85,#155b4c);color:white;font-size:1.25rem}.nav-actions{display:flex;align-items:center;gap:10px}.button{display:inline-flex;min-height:44px;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border:1px solid transparent;border-radius:999px;background:var(--green);color:white;font-weight:720}.button:hover{background:var(--dark)}.button.secondary{border-color:var(--line);background:var(--white);color:var(--ink)}.button.secondary:hover{background:var(--mint)}.button.danger{border-color:#f0d8d3;background:#fff5f2;color:#9c3c2c}.button:disabled{opacity:.5;cursor:not-allowed}.hero{padding:34px 0 24px}.eyebrow{color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.hero h1{max-width:720px;margin:10px 0 12px;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.075em}.hero p{max-width:700px;margin:0;color:var(--soft);font-size:1.04rem}.privacy-note{margin:22px 0;padding:16px 18px;border:1px solid #eadbbd;border-radius:18px;background:#fff9eb;color:#655b48;font-size:.9rem}.auth-card{max-width:580px;margin:60px auto;padding:32px;border:1px solid var(--line);border-radius:28px;background:var(--white);box-shadow:var(--shadow);text-align:center}.auth-card h2{margin:0 0 8px;font-size:1.7rem;letter-spacing:-.04em}.auth-card p{margin:0 auto 22px;color:var(--soft);max-width:440px}.auth-card .button{min-width:240px}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:20px 0}.search{flex:1 1 240px;min-height:46px;padding:10px 15px;border:1px solid var(--line);border-radius:14px;background:var(--white);color:var(--ink);outline:none}.search:focus,textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(35,123,102,.12)}.layout{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);align-items:start;gap:18px;padding-bottom:54px}.panel{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--white);box-shadow:0 8px 28px rgba(27,62,52,.04)}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 18px;border-bottom:1px solid var(--line)}.panel-head h2{margin:0;font-size:1.02rem}.count{color:var(--muted);font-size:.82rem}.entries{max-height:68vh;overflow:auto}.entry{padding:16px 18px;border-bottom:1px solid #edf1eb;cursor:pointer}.entry:last-child{border-bottom:0}.entry:hover,.entry.selected{background:#f1f7f1}.entry-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}.entry-title{min-width:0;overflow:hidden;font-weight:740;text-overflow:ellipsis;white-space:nowrap}.entry-meta{color:var(--muted);font-size:.75rem}.entry-preview{display:-webkit-box;overflow:hidden;margin:0;color:var(--soft);font-size:.88rem;-webkit-box-orient:vertical;-webkit-line-clamp:3;white-space:pre-wrap}.star{border:0;background:transparent;color:#9c7a2f;font-size:1.1rem}.editor{padding:20px}.editor-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:16px}.editor-head h2{margin:0 0 3px;font-size:1.15rem}.editor-head p{margin:0;color:var(--muted);font-size:.8rem}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:.82rem;font-weight:720}.field input,.field textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);outline:none}.field textarea{min-height:280px;resize:vertical;line-height:1.65}.editor-actions{display:flex;flex-wrap:wrap;gap:8px}.notice{min-height:22px;margin:12px 0;color:var(--soft);font-size:.85rem}.empty{padding:34px 20px;color:var(--muted);text-align:center}.muted{color:var(--muted)}.footer{padding:20px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}.hidden{display:none!important}.print-only{display:none}@media(max-width:760px){.layout{grid-template-columns:1fr}.entries{max-height:43vh}.editor{min-height:380px}.hero{padding-top:20px}.nav{align-items:flex-start}.nav-actions{justify-content:flex-end;flex-wrap:wrap}.auth-card{margin:36px auto;padding:25px}.shell{width:min(100% - 24px,1160px)}}@media print{body{background:white}.top,.hero,.privacy-note,.toolbar,.layout>.panel:first-child,.editor-actions,.editor-head,.field label,.notice,.footer,#editorPlaceholder{display:none!important}#title:placeholder-shown,#content:placeholder-shown{display:none!important}.shell{width:100%;margin:0}.layout{display:block;padding:0}.panel{border:0;box-shadow:none}.editor{padding:0}.field input,.field textarea{border:0;padding:0;resize:none;min-height:0}.field textarea{height:auto;white-space:pre-wrap}.print-only{display:block}}
   </style>
+  <style>
+    .format-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0}.format-toolbar button,.format-toolbar select{min-height:38px;padding:6px 9px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink)}.format-toolbar button:hover{background:var(--mint)}.format-toolbar input[type=color]{width:40px;height:38px;padding:3px;border:1px solid var(--line);border-radius:10px;background:var(--white)}.rich-editor{width:100%;min-height:280px;max-height:65vh;overflow:auto;padding:13px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);outline:none;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.2}.rich-editor:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(35,123,102,.12)}.rich-editor:empty:before{content:attr(data-placeholder);color:var(--muted)}.entry-top .entry-more{border:0;background:transparent;color:var(--ink);font-size:1.1rem}.entry-menu{position:absolute;z-index:5;right:10px;top:38px;min-width:175px;padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--white);box-shadow:var(--shadow)}.entry-menu button{display:block;width:100%;padding:8px;border:0;border-radius:8px;background:transparent;text-align:left}.entry-menu button:hover{background:var(--mint)}.entry{position:relative}.entry:focus-visible{outline:3px solid var(--green);outline-offset:2px}@media print{.format-toolbar,.entry-menu{display:none!important}.rich-editor{max-height:none;min-height:0;overflow:visible;border:0!important;padding:0!important;white-space:pre-wrap}}
+  </style>
 </head>
 <body>
   <header class="top"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="../"><span class="mark">K</span><span>Keystore</span></a><div class="nav-actions"><span id="identity" class="muted"></span><button id="signOut" class="button secondary hidden">Sign out</button><a class="button secondary" href="../">About Keystore</a></div></nav></header>
   <main class="shell">
     <section class="hero"><span class="eyebrow">Your archive, across devices</span><h1>Saved text, wherever you are.</h1><p>Sign in with the same Google account you use in Keystore to view and edit clipboard entries that have synced to your account.</p></section>
-    <aside class="privacy-note"><strong>Cloud storage:</strong> Sync is opt-in in the Android app. Cloud entries are protected by your accountâ€™s row-level access rules and Supabase encryption at rest, but are not end-to-end encrypted. Avoid storing passwords, payment details, recovery codes, or other secrets.</aside>
-    <section id="signedOut" class="auth-card"><h2>Your archive follows your account</h2><p>Sign in with the same Google account used in Keystore to open clipboard entries you chose to sync.</p><button id="signIn" class="button">Sign in with Google</button><p class="muted">Google sign-in becomes active after Keystore Cloudâ€™s Google OAuth client is configured.</p><div id="authNotice" class="notice" role="status"></div></section>
+    <aside class="privacy-note"><strong>Cloud storage:</strong> Sync is opt-in in the Android app. Cloud entries are protected by your account’s row-level access rules and Supabase encryption at rest, but are not end-to-end encrypted. Avoid storing passwords, payment details, recovery codes, or other secrets.</aside>
+    <section id="signedOut" class="auth-card"><h2>Your archive follows your account</h2><p>Sign in with the same Google account used in Keystore to open clipboard entries you chose to sync.</p><button id="signIn" class="button">Sign in with Google</button><p class="muted">Google sign-in becomes active after Keystore Cloud’s Google OAuth client is configured.</p><div id="authNotice" class="notice" role="status"></div></section>
     <section id="signedIn" class="hidden">
       <div class="toolbar"><input id="search" class="search" type="search" placeholder="Search your saved text" aria-label="Search clipboard entries"><button id="newEntry" class="button">New text</button><button id="showTrash" class="button secondary">Recently deleted</button><button id="refresh" class="button secondary">Refresh</button></div>
       <div class="layout">
         <section class="panel" aria-label="Clipboard archive"><div class="panel-head"><h2 id="listTitle">Clipboard archive</h2><span id="count" class="count"></span></div><div id="entries" class="entries"></div></section>
         <section class="panel" id="editorPlaceholder"><div class="empty">Choose a saved clip to edit, or tap <strong>New text</strong> to start writing.</div></section>
-        <section class="panel hidden" id="editorPanel"><div class="editor"><div class="editor-head"><div><h2 id="editorHeading">New saved text</h2><p id="editorMeta">New entry will sync to your account.</p></div><button id="favorite" class="star hidden" aria-label="Toggle favorite"></button></div><div class="field"><label for="title">Title</label><input id="title" placeholder="Optional title" disabled></div><div class="field"><label for="content">Text</label><textarea id="content" placeholder="Write your text here" disabled></textarea></div><div class="editor-actions"><button id="save" class="button" disabled>Save changes</button><button id="copy" class="button secondary" disabled>Copy</button><button id="download" class="button secondary" disabled>Export TXT</button><button id="print" class="button secondary" disabled>Print / PDF</button><button id="trash" class="button danger hidden">Move to trash</button><button id="restore" class="button secondary hidden">Restore</button></div><div id="notice" class="notice" role="status"></div></div></section>
+        <section class="panel hidden" id="editorPanel"><div class="editor"><div class="editor-head"><div><h2 id="editorHeading">New saved text</h2><p id="editorMeta">New entry will sync to your account.</p></div><button id="favorite" class="star hidden" aria-label="Toggle favorite"></button></div><div class="field"><label for="title">Title</label><input id="title" placeholder="Optional title" disabled></div><div class="format-toolbar" role="toolbar" aria-label="Text formatting"><select id="fontFamily" aria-label="Font family"><option value="Sans">Sans</option><option value="Serif">Serif</option><option value="Monospace">Monospace</option><option value="Rounded">Rounded</option><option value="Casual">Casual</option></select><select id="fontSize" aria-label="Font size"><option>12</option><option>14</option><option selected>18</option><option>20</option><option>24</option><option>28</option><option>34</option></select><input id="textColor" type="color" value="#202820" aria-label="Text color"><button type="button" data-command="bold"><b>B</b></button><button type="button" data-command="italic"><i>I</i></button><button type="button" data-command="underline"><u>U</u></button><button type="button" data-align="left" aria-label="Align left">Left</button><button type="button" data-align="center" aria-label="Center text">Center</button><button type="button" data-align="right" aria-label="Align right">Right</button><button type="button" data-align="justify" aria-label="Justify text">Justify</button><select id="lineSpacing" aria-label="Line spacing"><option value="1">1.0×</option><option value="1.2" selected>1.2×</option><option value="1.5">1.5×</option><option value="2">2.0×</option></select><button type="button" id="savePreset">Save preset</button><select id="applyPreset" aria-label="Apply saved preset"><option value="">Apply preset…</option></select><button type="button" id="importDocument">Import TXT / DOCX</button><input id="importFile" type="file" accept=".txt,.docx,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden></div><div class="field"><label for="content">Text</label><div id="content" class="rich-editor" contenteditable="false" role="textbox" aria-multiline="true" aria-label="Saved text" data-placeholder="Write your text here"></div></div><div class="editor-actions"><button id="save" class="button" disabled>Save changes</button><button id="copy" class="button secondary" disabled>Copy</button><button id="download" class="button secondary" disabled>Export TXT</button><button id="print" class="button secondary" disabled>Print / PDF</button><button id="trash" class="button danger hidden">Move to trash</button><button id="restore" class="button secondary hidden">Restore</button></div><div id="notice" class="notice" role="status"></div></div></section>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="shell">Keystore Web Archive Â· Your cloud archive is private to your signed-in account. <span class="print-only">Exported from Keystore.</span></div></footer>
+  <footer class="footer"><div class="shell">Keystore Web Archive · Your cloud archive is private to your signed-in account. <span class="print-only">Exported from Keystore.</span></div></footer>
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+    import * as mammoth from 'https://cdn.jsdelivr.net/npm/mammoth@1.13.0/+esm';
 
     const SUPABASE_URL = 'https://ggrohhhnmcakcrmojrjs.supabase.co';
     const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_T_DMkyJZKyq2WrN4SNstCw_E77iOdpf';
@@ -39,17 +43,64 @@
     function say(message, target = 'notice') { $(target).textContent = message; }
     function safe(value) { return String(value ?? '').replace(/[&<>"']/g, char => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[char]); }
     function shortDate(value) { const date = new Date(value); return Number.isNaN(date.valueOf()) ? '' : new Intl.DateTimeFormat(undefined, { dateStyle:'medium', timeStyle:'short' }).format(date); }
+    function contentText() { return $('content').innerText.replace(/\r/g, '').replace(/\n$/, ''); }
+    function editorValue() { const text = contentText(); return { text, spans:serializeEditor(text) }; }
+    function setEditorHtml(text, spans = '') { $('content').innerHTML = richHtml(text, spans); }
+    function styleFlags(element, paragraph = false) {
+      const css = getComputedStyle(element), flags = [];
+      if (Number.parseInt(css.fontWeight, 10) >= 600 || ['B','STRONG'].includes(element.tagName)) flags.push('b');
+      if (css.fontStyle === 'italic' || ['I','EM'].includes(element.tagName)) flags.push('i');
+      if (css.textDecorationLine.includes('underline') || element.tagName === 'U') flags.push('u');
+      if (css.fontSize && css.fontSize.endsWith('px')) { const pt=Math.round(Number.parseFloat(css.fontSize)*.75); if(pt!==12) flags.push(`s${pt}`); }
+      const family = css.fontFamily.toLowerCase();
+      if (family.includes('serif') && !family.includes('sans')) flags.push('fSerif');
+      else if (family.includes('mono')) flags.push('fMonospace');
+      else if (family.includes('cursive')) flags.push('fCasual');
+      else if (family.includes('rounded')) flags.push('fRounded');
+      const rgb=css.color.match(/\d+/g)?.slice(0,3).map(Number);
+      if (rgb?.length===3) { const hex=rgb.map(value=>value.toString(16).padStart(2,'0')).join('').toUpperCase(); if(hex!=='173A35') flags.push(`cFF${hex}`); }
+      if (paragraph) {
+        const align=element.style.textAlign;
+        if (align) flags.push(`a${({start:'Left',left:'Left',center:'Center',right:'Right',end:'Right',justify:'Justify'})[align]||'Left'}`);
+        const spacing=Number.parseFloat(element.style.lineHeight);
+        if(Number.isFinite(spacing)&&spacing>0) flags.push(`l${Math.round(spacing*100)}`);
+      }
+      return [...new Set(flags)].sort();
+    }
+    function serializeEditor(text) {
+      if (!text) return '';
+      const chars=[], flagsAt=[];
+      const append=(value, flags)=>{ for(const char of value){chars.push(char);flagsAt.push(flags);} };
+      const blockTags=new Set(['DIV','P','LI','H1','H2','H3','H4','BLOCKQUOTE']);
+      const walk=(node, para=[])=>{
+        if(node.nodeType===Node.TEXT_NODE){ const value=node.nodeValue||''; const parent=node.parentElement; if(parent) append(value, styleFlags(parent).concat(para)); return; }
+        if(node.nodeType!==Node.ELEMENT_NODE) return;
+        const el=node, block=blockTags.has(el.tagName)&&el!==$('content');
+        if(el.tagName==='BR'){append('\n',para);return;}
+        if(block&&chars.length&&chars[chars.length-1]!=='\n') append('\n',para);
+        const nextPara=block?styleFlags(el,true):para;
+        [...el.childNodes].forEach(child=>walk(child,nextPara));
+        if(block&&el!==$('content')&&chars.length&&chars[chars.length-1]!=='\n') append('\n',nextPara);
+      };
+      [...$('content').childNodes].forEach(node=>walk(node,[]));
+      while(chars.length&&chars.at(-1)==='\n'){chars.pop();flagsAt.pop();}
+      const rendered=chars.join('');
+      if(rendered!==text) return '';
+      const records=[]; let start=0;
+      while(start<chars.length){const flags=flagsAt[start].join(',');let end=start+1;while(end<chars.length&&flagsAt[end].join(',')===flags)end++;if(flags)records.push(`${start}:${end}:${flags}`);start=end;}
+      return records.join('|');
+    }
     function setSignedIn(value) { $('signedOut').classList.toggle('hidden', value); $('signedIn').classList.toggle('hidden', !value); $('signOut').classList.toggle('hidden', !value); $('identity').textContent = value ? user?.email ?? '' : ''; }
 
     async function signIn() {
-      say('Opening Google sign-inâ€¦', 'authNotice');
+      say('Opening Google sign-in…', 'authNotice');
       const { error } = await supabase.auth.signInWithOAuth({ provider:'google', options:{ redirectTo:location.href, queryParams:{ access_type:'offline', prompt:'consent' } } });
       if (error) say(error.message, 'authNotice');
     }
 
     async function loadEntries() {
       if (!user) return;
-      say('Loading archiveâ€¦');
+      say('Loading archive…');
       let query = supabase.from('clipboard_entries').select('*').eq('is_deleted', trashMode).order('last_copied_at', { ascending:false }).limit(500);
       const term = $('search').value.trim();
       if (term) query = query.or(`title.ilike.%${term.replace(/[%,()]/g, '')}%,content.ilike.%${term.replace(/[%,()]/g, '')}%,tags.ilike.%${term.replace(/[%,()]/g, '')}%`);
@@ -58,9 +109,9 @@
       rows = data ?? [];
       $('listTitle').textContent = trashMode ? 'Recently deleted' : 'Clipboard archive';
       $('count').textContent = `${rows.length}${rows.length === 500 ? '+' : ''} ${rows.length === 1 ? 'entry' : 'entries'}`;
-      $('entries').innerHTML = rows.length ? rows.map(row => `<article class="entry ${selected?.id === row.id ? 'selected' : ''}" data-id="${safe(row.id)}"><div class="entry-top"><span class="entry-title">${safe(row.title || row.content_type || 'Saved text')}</span><button class="star" data-favorite="${safe(row.id)}" aria-label="${row.is_favorite ? 'Remove favorite' : 'Add favorite'}">${row.is_favorite ? 'â˜…' : 'â˜†'}</button></div><div class="entry-meta">${safe(shortDate(row.last_copied_at))} Â· ${Number(row.character_count) || row.content.length} characters</div><p class="entry-preview">${safe(row.preview || row.content)}</p></article>`).join('') : '<div class="empty">No entries here yet. Turn on sync in the Keystore Android app to bring your archive here.</div>';
+      $('entries').innerHTML = rows.length ? rows.map(row => `<article class="entry ${selected?.id === row.id ? 'selected' : ''}" data-id="${safe(row.id)}"><div class="entry-top"><span class="entry-title">${safe(row.title || row.content_type || 'Saved text')}</span><div><button class="star" data-favorite="${safe(row.id)}" aria-label="${row.is_favorite ? 'Remove favorite' : 'Add favorite'}">${row.is_favorite ? '★' : '☆'}</button><button class="entry-more" data-more="${safe(row.id)}" aria-label="Clip actions">⋮</button></div><div class="entry-menu hidden"><button data-entry-action="open">Open in editor</button><button data-entry-action="copy">Copy text</button><button data-entry-action="trash">Move to trash</button></div></div><div class="entry-meta">${safe(shortDate(row.last_copied_at))} · ${Number(row.character_count) || row.content.length} characters</div><p class="entry-preview">${safe(row.preview || row.content)}</p></article>`).join('') : '<div class="empty">No entries here yet. Turn on sync in the Keystore Android app to bring your archive here.</div>';
       document.querySelectorAll('.entry').forEach(el => el.addEventListener('click', event => {
-        if (event.target.closest('[data-favorite]')) return;
+        if (event.target.closest('button')) return;
         selectEntry(rows.find(row => row.id === el.dataset.id));
       }));
       document.querySelectorAll('[data-favorite]').forEach(button => button.addEventListener('click', async event => {
@@ -70,6 +121,8 @@
         const { error } = await supabase.from('clipboard_entries').update({ is_favorite:!row.is_favorite, updated_at:new Date().toISOString() }).eq('id', row.id);
         if (error) say(error.message); else await loadEntries();
       }));
+      document.querySelectorAll('[data-more]').forEach(button=>button.addEventListener('click',event=>{event.stopPropagation();const menu=button.closest('.entry').querySelector('.entry-menu');document.querySelectorAll('.entry-menu').forEach(other=>{if(other!==menu)other.classList.add('hidden');});menu.classList.toggle('hidden');}));
+      document.querySelectorAll('[data-entry-action]').forEach(button=>button.addEventListener('click',async event=>{event.stopPropagation();const card=button.closest('.entry'),row=rows.find(item=>item.id===card.dataset.id),action=button.dataset.entryAction;if(!row)return;card.querySelector('.entry-menu').classList.add('hidden');if(action==='open')selectEntry(row);else if(action==='copy'){try{await navigator.clipboard.writeText(row.content);say('Copied to this device’s clipboard.');}catch{say('Clipboard access is unavailable.');}}else if(action==='trash'){const now=new Date().toISOString();const {error}=await supabase.from('clipboard_entries').update({is_deleted:true,deleted_at:now,updated_at:now}).eq('id',row.id);if(error)say(error.message);else{if(selected?.id===row.id)clearEditor();say('Moved to Recently deleted.');await loadEntries();}}}));
       say(rows.length ? '' : '');
     }
 
@@ -77,7 +130,7 @@
       selected = null;
       $("editorPanel").classList.add("hidden");
       $("editorPlaceholder").classList.remove("hidden");
-      $("title").value = ""; $("content").value = "";
+      $("title").value = ""; $("content").innerHTML = ""; $("content").contentEditable = "false";
       ["save","copy","download","print"].forEach(id => $(id).disabled = true);
       $("favorite").classList.add("hidden"); $("trash").classList.add("hidden"); $("restore").classList.add("hidden");
       say("");
@@ -88,14 +141,14 @@
       $("editorPlaceholder").classList.add("hidden");
       $("editorPanel").classList.remove("hidden");
       $('editorHeading').textContent = row ? (row.title || 'Edit saved text') : 'New saved text';
-      $('editorMeta').textContent = row ? `Last copied ${shortDate(row.last_copied_at)} Â· ${row.content_type}` : 'New entry will sync to your account.';
+      $('editorMeta').textContent = row ? `Last copied ${shortDate(row.last_copied_at)} · ${row.content_type}` : 'New entry will sync to your account.';
       $('title').disabled = false;
-      $('content').disabled = false;
+      $('content').contentEditable = 'true';
       $('title').value = row?.title ?? '';
-      $('content').value = row?.content ?? '';
+      setEditorHtml(row?.content ?? '', row?.rich_text_spans?.value ?? '');
       ['save','copy','download','print'].forEach(id => $(id).disabled = false);
       $('favorite').classList.toggle('hidden', !row || trashMode);
-      $('favorite').textContent = row?.is_favorite ? 'â˜…' : 'â˜†';
+      $('favorite').textContent = row?.is_favorite ? '★' : '☆';
       $('trash').classList.toggle('hidden', !row || trashMode);
       $('restore').classList.toggle('hidden', !row || !trashMode);
       say('');
@@ -103,17 +156,17 @@
     }
 
     async function saveEntry() {
-      const content = $('content').value;
+      const { text:content, spans } = editorValue();
       if (!content.trim()) { say('Text cannot be empty.'); return; }
-      say('Savingâ€¦');
+      say('Saving…');
       const now = new Date().toISOString();
-      const spans = selected?.content === content ? (selected.rich_text_spans?.value ?? '') : '';
       const patch = { title:$('title').value.trim(), content, preview:content.replace(/\s+/g,' ').trim().slice(0,140), content_type:/https?:\/\//i.test(content) ? 'link' : 'text', updated_at:now, last_copied_at:selected?.last_copied_at ?? now, word_count:content.trim().split(/\s+/).length, character_count:content.length, rich_text_spans:{ value:spans } };
       let result;
       if (selected) result = await supabase.from('clipboard_entries').update(patch).eq('id', selected.id).select().single();
       else result = await supabase.from('clipboard_entries').insert({ ...patch, user_id:user.id, client_id:crypto.randomUUID(), created_at:now, is_deleted:false, is_sensitive:false, is_favorite:false, is_pinned:false, is_locked:false, copy_count:1, tags:'' }).select().single();
       if (result.error) { say(result.error.message); return; }
       selected = result.data;
+      setEditorHtml(selected.content, selected.rich_text_spans?.value ?? '');
       $('editorHeading').textContent = selected.title || 'Edit saved text';
       say('Saved to your Keystore cloud archive.');
       await loadEntries();
@@ -121,40 +174,70 @@
 
     async function copyEntry() {
       try {
-        const text = $('content').value;
-        const encoded = selected?.rich_text_spans?.value ?? '';
+        const { text, spans:encoded } = editorValue();
         if (navigator.clipboard.write && window.ClipboardItem && encoded) {
           const html = richHtml(text, encoded);
           await navigator.clipboard.write([new ClipboardItem({ 'text/plain':new Blob([text],{type:'text/plain'}), 'text/html':new Blob([html],{type:'text/html'}) })]);
         } else await navigator.clipboard.writeText(text);
-        say('Copied to this deviceâ€™s clipboard.');
+        say('Copied to this device’s clipboard.');
       }
       catch { say('Clipboard access is unavailable. Select and copy the text manually.'); }
     }
 
     function richHtml(text, encoded) {
+      if (!text) return '';
       const ranges = encoded.split('|').map(chunk => { const [start,end,flags=''] = chunk.split(':',3); return {start:+start,end:+end,flags:flags.split(',')}; }).filter(r => Number.isInteger(r.start) && Number.isInteger(r.end) && r.start >= 0 && r.end <= text.length && r.end > r.start);
-      const runs = [];
-      for (let i=0;i<text.length;i++) {
-        const flags = [...new Set(ranges.filter(r => i >= r.start && i < r.end).flatMap(r => r.flags))].sort().join(',');
-        const last = runs[runs.length-1];
-        if (last?.flags === flags) last.text += text[i]; else runs.push({flags,text:text[i]});
-      }
       const escape = value => value.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]).replace(/\n/g,'<br>');
-      return runs.map(run => {
-        let content = escape(run.text), f = run.flags.split(',');
-        if (f.some(x => x.startsWith('f'))) content = `<span style="font-family:${f.find(x=>x.startsWith('f')).slice(1)==='Serif'?'serif':f.find(x=>x.startsWith('f')).slice(1)==='Monospace'?'monospace':'sans-serif'}">${content}</span>`;
-        const size = f.find(x => x.startsWith('s'))?.slice(1); if (size) content = `<span style="font-size:${Number(size)}pt">${content}</span>`;
-        if (f.includes('u')) content = `<u>${content}</u>`;
-        if (f.includes('i')) content = `<em>${content}</em>`;
-        if (f.includes('b')) content = `<strong>${content}</strong>`;
-        return content;
-      }).join('');
+      const lines=[];let offset=0;
+      for(const line of text.split('\n')){
+        const lineStart=offset,lineEnd=offset+line.length;
+        const paraFlags=[...new Set(ranges.filter(r=>r.end>lineStart&&r.start<=lineEnd).flatMap(r=>r.flags).filter(f=>f.startsWith('a')||f.startsWith('l')))];
+        const align=paraFlags.find(f=>f.startsWith('a'))?.slice(1),spacing=paraFlags.find(f=>f.startsWith('l'))?.slice(1);
+        let runStart=0,runs='';
+        while(runStart<line.length){const pos=lineStart+runStart;const flags=[...new Set(ranges.filter(r=>pos>=r.start&&pos<r.end).flatMap(r=>r.flags).filter(f=>!f.startsWith('a')&&!f.startsWith('l')))].sort();let runEnd=runStart+1;while(runEnd<line.length){const next=lineStart+runEnd,nextFlags=[...new Set(ranges.filter(r=>next>=r.start&&next<r.end).flatMap(r=>r.flags).filter(f=>!f.startsWith('a')&&!f.startsWith('l')))].sort();if(flags.join(',')!==nextFlags.join(','))break;runEnd++;}let value=escape(line.slice(runStart,runEnd));const family=flags.find(f=>f.startsWith('f'))?.slice(1);if(family)value=`<span style="font-family:${({Serif:'serif',Monospace:'monospace',Casual:'cursive',Rounded:'sans-serif-rounded, sans-serif',Sans:'sans-serif'})[family]||'sans-serif'}">${value}</span>`;const size=flags.find(f=>f.startsWith('s'))?.slice(1);if(size)value=`<span style="font-size:${Number(size)}pt">${value}</span>`;const color=flags.find(f=>f.startsWith('c'))?.slice(1);if(color&&/^[0-9A-F]{8}$/i.test(color))value=`<span style="color:#${color.slice(-6)}">${value}</span>`;if(flags.includes('u'))value=`<u>${value}</u>`;if(flags.includes('i'))value=`<em>${value}</em>`;if(flags.includes('b'))value=`<strong>${value}</strong>`;runs+=value;runStart=runEnd;}
+        const alignValue=({Center:'center',Right:'right',Justify:'justify'})[align]||'left';
+        lines.push(`<p style="margin:0;text-align:${alignValue};${spacing?`line-height:${Math.max(.8,Math.min(3,Number(spacing)/100))}`:''}">${runs||'<br>'}</p>`);offset+=line.length+1;
+      }
+      return lines.join('');
+    }
+
+    let savedRange=null;
+    function rememberEditorSelection(){const selection=getSelection();if(selection?.rangeCount&&$('content').contains(selection.anchorNode))savedRange=selection.getRangeAt(0).cloneRange();}
+    function restoreEditorSelection(){const selection=getSelection();if(savedRange){selection.removeAllRanges();selection.addRange(savedRange);}else{$('content').focus();const range=document.createRange();range.selectNodeContents($('content'));range.collapse(false);selection.removeAllRanges();selection.addRange(range);}}
+    function wrapSelection(style){
+      restoreEditorSelection();const selection=getSelection();let range=selection?.rangeCount?selection.getRangeAt(0):null;if(!range)return;
+      if(range.collapsed){range.selectNodeContents($('content'));}
+      if(range.collapsed)return;const wrapper=document.createElement('span');Object.assign(wrapper.style,style);wrapper.append(range.extractContents());range.insertNode(wrapper);selection.removeAllRanges();const next=document.createRange();next.selectNodeContents(wrapper);selection.addRange(next);savedRange=next.cloneRange();$('content').focus();
+    }
+    function selectedBlocks(){
+      const root=$('content'),selection=getSelection(),blockSelector='p,div,li,h1,h2,h3,h4,blockquote';let range=selection?.rangeCount?selection.getRangeAt(0):null;
+      if(range?.collapsed){const node=selection.anchorNode?.nodeType===Node.ELEMENT_NODE?selection.anchorNode:selection.anchorNode?.parentElement;const block=node?.closest(blockSelector);return block&&root.contains(block)?[block]:[root];}
+      const blocks=[...root.querySelectorAll(blockSelector)].filter(block=>{try{return range?.intersectsNode(block);}catch{return false;}});return blocks.length?blocks:[root];
+    }
+    function applyParagraphCss(style){selectedBlocks().forEach(block=>Object.assign(block.style,style));$('content').focus();}
+    function fontCss(name){return ({Sans:'Arial, sans-serif',Serif:'Georgia, serif',Monospace:'Courier New, monospace',Rounded:'Trebuchet MS, sans-serif',Casual:'Comic Sans MS, cursive'})[name]||'Arial, sans-serif';}
+    function applyPresetToDocument(preset){
+      const root=$('content'),walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[];while(walker.nextNode())if(walker.currentNode.nodeValue.trim())nodes.push(walker.currentNode);
+      nodes.forEach(node=>{const span=document.createElement('span');Object.assign(span.style,{fontFamily:fontCss(preset.font),fontSize:`${preset.size}pt`,color:preset.color,fontWeight:preset.bold?'700':'400',fontStyle:preset.italic?'italic':'normal',textDecoration:preset.underline?'underline':'none'});node.parentNode.insertBefore(span,node);span.append(node);});
+      const blocks=root.querySelectorAll('p,div,li,h1,h2,h3,h4,blockquote');(blocks.length?[...blocks]:[root]).forEach(block=>Object.assign(block.style,{textAlign:preset.align,lineHeight:preset.spacing}));
+      $('fontFamily').value=preset.font;$('fontSize').value=preset.size;$('textColor').value=preset.color;$('lineSpacing').value=preset.spacing;$('content').focus();
+    }
+    function refreshPresetMenu(){
+      const presets=JSON.parse(localStorage.getItem('keystore-editor-presets')||'[]');$('applyPreset').innerHTML='<option value="">Apply preset…</option>'+presets.map((preset,index)=>`<option value="${index}">${safe(preset.name)}</option>`).join('');
+    }
+    function safeImportedHtml(html){return sanitizeDocxHtml(html);}
+    function setImportedText(text){$('content').innerHTML=text.split(/\r?\n/).map(line=>`<p style="margin:0">${line.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[char])||'<br>'}</p>`).join('');}
+
+    function sanitizeDocxHtml(html) {
+      const template=document.createElement('template');template.innerHTML=html;
+      const allowed=new Set(['P','DIV','BR','STRONG','B','EM','I','U','SPAN','OL','UL','LI','H1','H2','H3','H4','BLOCKQUOTE']);
+      const walk=node=>[...node.childNodes].forEach(child=>{if(child.nodeType!==Node.ELEMENT_NODE)return;if(!allowed.has(child.tagName)){child.replaceWith(...child.childNodes);return;}const css=child.getAttribute('style')||'';for(const attr of [...child.attributes])if(attr.name!=='style')child.removeAttribute(attr.name);if(css){const clean=[];for(const part of css.split(';')){const [key,...valueParts]=part.split(':');const value=valueParts.join(':').trim();if(['font-family','font-size','color','text-align','line-height'].includes(key?.trim().toLowerCase())&&/^[#(),.%\w\s"'-]+$/.test(value))clean.push(`${key.trim().toLowerCase()}:${value}`);}if(clean.length)child.setAttribute('style',clean.join(';'));else child.removeAttribute('style');}walk(child);});
+      walk(template.content);return template.innerHTML;
     }
 
     function downloadText() {
-      if (!$('content').value.trim()) { say('Add text before exporting.'); return; }
-      const blob = new Blob([$('content').value], { type:'text/plain;charset=utf-8' });
+      const text=contentText(); if (!text.trim()) { say('Add text before exporting.'); return; }
+      const blob = new Blob([text], { type:'text/plain;charset=utf-8' });
       const url = URL.createObjectURL(blob), link = document.createElement('a');
       link.href = url; link.download = `${$('title').value.trim() || 'keystore-text'}.txt`; link.click(); URL.revokeObjectURL(url);
     }
@@ -176,14 +259,26 @@
     $('save').addEventListener('click', () => saveEntry().catch(error => say(error.message)));
     $('copy').addEventListener('click', () => copyEntry());
     $('download').addEventListener('click', downloadText);
-    $('print').addEventListener('click', () => { if ($('content').value.trim()) window.print(); else say('Add text before exporting.'); });
+    $('print').addEventListener('click', () => { if (contentText().trim()) window.print(); else say('Add text before exporting.'); });
     $('trash').addEventListener('click', () => setDeleted(true));
     $('restore').addEventListener('click', () => setDeleted(false));
     $('favorite').addEventListener('click', async () => {
       if (!selected) return;
       const { error } = await supabase.from('clipboard_entries').update({ is_favorite:!selected.is_favorite, updated_at:new Date().toISOString() }).eq('id', selected.id);
-      if (error) say(error.message); else { selected.is_favorite = !selected.is_favorite; $('favorite').textContent = selected.is_favorite ? 'â˜…' : 'â˜†'; await loadEntries(); }
+      if (error) say(error.message); else { selected.is_favorite = !selected.is_favorite; $('favorite').textContent = selected.is_favorite ? '★' : '☆'; await loadEntries(); }
     });
+    $('content').addEventListener('keyup',rememberEditorSelection);$('content').addEventListener('mouseup',rememberEditorSelection);$('content').addEventListener('input',rememberEditorSelection);document.addEventListener('selectionchange',rememberEditorSelection);
+    document.querySelectorAll('[data-command]').forEach(button=>button.addEventListener('mousedown',event=>event.preventDefault()));
+    document.querySelectorAll('[data-command]').forEach(button=>button.addEventListener('click',()=>{restoreEditorSelection();document.execCommand(button.dataset.command,false,null);$('content').focus();rememberEditorSelection();}));
+    $('fontFamily').addEventListener('change',()=>wrapSelection({fontFamily:fontCss($('fontFamily').value)}));
+    $('fontSize').addEventListener('change',()=>wrapSelection({fontSize:`${Number($('fontSize').value)}pt`}));
+    $('textColor').addEventListener('input',()=>{restoreEditorSelection();document.execCommand('foreColor',false,$('textColor').value);$('content').focus();rememberEditorSelection();});
+    document.querySelectorAll('[data-align]').forEach(button=>button.addEventListener('click',()=>applyParagraphCss({textAlign:button.dataset.align})));
+    $('lineSpacing').addEventListener('change',()=>applyParagraphCss({lineHeight:$('lineSpacing').value}));
+    $('savePreset').addEventListener('click',()=>{const name=prompt('Name this text style preset:');if(!name?.trim())return;const presets=JSON.parse(localStorage.getItem('keystore-editor-presets')||'[]');presets.push({name:name.trim(),font:$('fontFamily').value,size:Number($('fontSize').value),color:$('textColor').value,spacing:$('lineSpacing').value,align:'left',bold:document.queryCommandState('bold'),italic:document.queryCommandState('italic'),underline:document.queryCommandState('underline')});localStorage.setItem('keystore-editor-presets',JSON.stringify(presets.slice(-20)));refreshPresetMenu();say('Preset saved on this browser. Apply it to each document you want to format.');});
+    $('applyPreset').addEventListener('change',()=>{const index=Number($('applyPreset').value);if(!Number.isInteger(index))return;const preset=JSON.parse(localStorage.getItem('keystore-editor-presets')||'[]')[index];if(preset){applyPresetToDocument(preset);say(`Applied “${preset.name}” to this document. Save changes to keep it.`);} $('applyPreset').value='';});
+    $('importDocument').addEventListener('click',()=> $('importFile').click());
+    $('importFile').addEventListener('change',async event=>{const file=event.target.files?.[0];event.target.value='';if(!file)return;if(file.size>20*1024*1024){say('Files must be smaller than 20 MB.');return;}if(selected&&!confirm('Import this as a new saved document? Any unsaved changes in the open clip will be discarded.'))return;try{let html;if(file.name.toLowerCase().endsWith('.txt')){setImportedText(await file.text());}else if(file.name.toLowerCase().endsWith('.docx')){const converted=await mammoth.convertToHtml({arrayBuffer:await file.arrayBuffer()});html=safeImportedHtml(converted.value);$('content').innerHTML=html;}else throw new Error('Import supports TXT and DOCX files. PDF and legacy DOC are not editable imports yet.');if(!contentText().trim())throw new Error('This document does not contain editable text.');selected=null;$('editorPlaceholder').classList.add('hidden');$('editorPanel').classList.remove('hidden');$('content').contentEditable='true';$('title').disabled=false;$('title').value=file.name.replace(/\.(txt|docx)$/i,'');['save','copy','download','print'].forEach(id=>$(id).disabled=false);$('editorHeading').textContent='Imported document';$('editorMeta').textContent='Imported as a new document. Save to add it to your cloud archive.';await saveEntry();}catch(error){say(error.message||'Import failed.');}});
     $('search').addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(loadEntries, 220); });
 
     supabase.auth.onAuthStateChange((_event, session) => {
@@ -194,6 +289,7 @@
     const { data:{ session } } = await supabase.auth.getSession();
     user = session?.user ?? null;
     setSignedIn(Boolean(user));
+    refreshPresetMenu();
     if (user) await loadEntries(); else clearEditor();
   </script>
 </body>
